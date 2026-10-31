@@ -1,0 +1,26 @@
+@session_id = 1c0dd46b-5e67-4bac-92f1-10efc976c447
+
+POST http://localhost:8000/chat
+content-type: application/json
+
+{
+    "session_id": "{{session_id}}",
+    "model": "gpt-5.4-nano",
+    "message": "תיצור לי דף בית לאתר עם עיצוב בסגנון CSS ו-Tailwind"
+}
+
+###
+POST http://localhost:8000/chat
+content-type: application/json
+
+{
+    "session_id": "{{session_id}}",
+    "model": "gpt-5.4-nano",
+    "message": "תוסיף להצעה גם אזור המלצות"
+}
+
+###
+DELETE http://localhost:8000/chat/{{session_id}}
+
+###
+GET http://localhost:8000/health
